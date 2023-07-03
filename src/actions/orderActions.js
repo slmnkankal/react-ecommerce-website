@@ -41,7 +41,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const { data } = await axios.post("/api/orders/add/", order, {
+    const { data } = await axios.post("https://django-ecommerce-website.up.railway.app/api/orders/add/", order, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -79,7 +79,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const { data } = await axios.get(`/api/orders/${id}/`, {
+    const { data } = await axios.get(`https://django-ecommerce-website.up.railway.app/api/orders/${id}/`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -110,7 +110,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const { data } = await axios.put(`/api/orders/${id}/pay/`, paymentResult, {
+    const { data } = await axios.put(`https://django-ecommerce-website.up.railway.app/api/orders/${id}/pay/`, paymentResult, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -142,7 +142,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const { data } = await axios.put(`/api/orders/${order._id}/deliver/`, {}, {
+    const { data } = await axios.put(`https://django-ecommerce-website.up.railway.app/api/orders/${order._id}/deliver/`, {}, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -174,7 +174,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const { data } = await axios.get(`/api/orders/myorders/`, {
+    const { data } = await axios.get(`https://django-ecommerce-website.up.railway.app/api/orders/myorders/`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -206,7 +206,7 @@ export const listOrders = () => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const { data } = await axios.get(`/api/orders/`, {
+    const { data } = await axios.get(`https://django-ecommerce-website.up.railway.app/api/orders/`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },

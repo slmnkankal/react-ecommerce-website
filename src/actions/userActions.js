@@ -49,7 +49,7 @@ export const login = (email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'api/users/login/',
+            'https://django-ecommerce-website.up.railway.app/api/users/login/',
             { 'username': email, 'password': password}
         )
 
@@ -95,7 +95,7 @@ export const register = (name, email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'api/users/register/',
+            'https://django-ecommerce-website.up.railway.app/api/users/register/',
             { 'name': name, 'email': email, 'password': password}
         )
 
@@ -142,7 +142,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `/api/users/${id}/`,
+            `https://django-ecommerce-website.up.railway.app/api/users/${id}/`,
             config
         )
 
@@ -177,7 +177,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         } = getState()
 
         const { data } = await axios.put(
-            'api/users/profile/update/',
+            'https://django-ecommerce-website.up.railway.app/api/users/profile/update/',
             user,
             {
                 headers: {
@@ -222,7 +222,7 @@ export const listUsers = () => async (dispatch, getState) => {
         } = getState()
 
         const { data } = await axios.get(
-            '/api/users/',
+            'https://django-ecommerce-website.up.railway.app/api/users/',
             {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
@@ -257,7 +257,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
         } = getState()
 
         const { data } = await axios.delete(
-            `/api/users/delete/${id}`,
+            `https://django-ecommerce-website.up.railway.app/api/users/delete/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
@@ -292,7 +292,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
         } = getState()
 
         const { data } = await axios.put(
-            `/api/users/update/${user._id}/`,
+            `https://django-ecommerce-website.up.railway.app/api/users/update/${user._id}/`,
             user,
             {
                 headers: {

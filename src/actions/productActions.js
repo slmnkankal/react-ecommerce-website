@@ -35,7 +35,7 @@ import {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST })
 
-        const { data } = await axios.get(`/api/products${keyword}`)
+        const { data } = await axios.get(`https://django-ecommerce-website.up.railway.app/api/products${keyword}`)
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -58,7 +58,7 @@ import {
     try {
         dispatch({ type: PRODUCT_TOP_REQUEST })
 
-        const { data } = await axios.get(`/api/products/top/`)
+        const { data } = await axios.get(`https://django-ecommerce-website.up.railway.app/api/products/top/`)
 
         dispatch({
             type: PRODUCT_TOP_SUCCESS,
@@ -80,7 +80,7 @@ import {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-        const { data } = await axios.get(`/api/products/${id}`)
+        const { data } = await axios.get(`https://django-ecommerce-website.up.railway.app/api/products/${id}`)
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -107,7 +107,7 @@ import {
         userLogin: { userInfo },
       } = getState();
   
-      const { data } = await axios.delete(`/api/products/delete/${id}`, {
+      const { data } = await axios.delete(`https://django-ecommerce-website.up.railway.app/api/products/delete/${id}`, {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
         },
@@ -138,7 +138,7 @@ import {
         userLogin: { userInfo },
       } = getState();
   
-      const { data } = await axios.post(`/api/products/create/`,
+      const { data } = await axios.post(`https://django-ecommerce-website.up.railway.app/api/products/create/`,
       {},
        {
         headers: {
@@ -173,7 +173,7 @@ import {
         userLogin: { userInfo },
       } = getState();
   
-      const { data } = await axios.put(`/api/products/update/${product._id}/`,
+      const { data } = await axios.put(`https://django-ecommerce-website.up.railway.app/api/products/update/${product._id}/`,
       product,
        {
         headers: {
@@ -213,7 +213,7 @@ import {
         userLogin: { userInfo },
       } = getState();
   
-      const { data } = await axios.post(`/api/products/${productId}/reviews/`,
+      const { data } = await axios.post(`https://django-ecommerce-website.up.railway.app/api/products/${productId}/reviews/`,
       review,
        {
         headers: {
