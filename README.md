@@ -1,4 +1,4 @@
-slmnknkl@gmail.com (username) admin(password)
+slmnknkl@gmail.com (username) admin (password)
 
 # Getting Started with Create React App
 
